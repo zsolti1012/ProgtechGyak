@@ -7,6 +7,7 @@ egy tabletbe.
 
 Singleton:
   Az eszközök egyedi része, amely a többi eszközben nem található meg, pl. billentyűzet, vagy touch pad.
+  
  Prototype:
   pl. a processzorok újrafelhasználásánál. mind  három eszközben található processzor csak más paraméterekkel.
   
