@@ -5,13 +5,20 @@
  */
 package Commom;
 
-import java.net.Socket;
+//import java.net.Socket;
+import jdk.net.Sockets;
 
 /**
  *
  * @author O.Zsolt
  */
 public class Memory {
+    
+    public Memory(double frequency,Socket socket,double sizemb){
+       this.frequency=frequency;
+       this.socket=this.socket;
+       this.sizemb=sizemb;
+    }
     private double frequency;
     private Socket socket;
     private double sizemb;
@@ -43,7 +50,7 @@ public class Memory {
     
     
     public Memory DeepCopy(){
-        Memory clone=new Memory();
+        Memory clone=new Memory(getFrequency(),getSocket(),getSizemb());
         clone.sizemb=sizemb;
         clone.frequency=frequency;
         clone.socket=socket;

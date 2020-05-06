@@ -11,40 +11,12 @@ package Laptop;
  */
 public class Keyboard {
     
-    private double length;
-    private double width;
-    private National nat;
+   
+    private National nat=National.HUN;
     private int buttons=101;
     
     
 
-    public void setLength(double length) {
-        this.length = length;
-    }
-
-    public double getLength() {
-        return length;
-    }
-
-    public void setWidth(double width) {
-        this.width = width;
-    }
-
-    public double getWidth() {
-        return width;
-    }
-
-    public void setNat(National nat) {
-        this.nat = nat;
-    }
-
-    public National getNat() {
-        return nat;
-    }
-
-    public int getButtons() {
-        return buttons;
-    }
     
     
     

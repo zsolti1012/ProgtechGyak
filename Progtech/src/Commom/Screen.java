@@ -11,9 +11,12 @@ package Commom;
  */
 public class Screen {
     
+    public Screen(double width,Resolution resolution){
+        this.width=width;
+        this.resolution=resolution;
+    }
     
-    
-    private int width;
+    private double width;
     private Resolution resolution;
 
     public void setResolution(Resolution resolution) {
@@ -28,7 +31,7 @@ public class Screen {
         return resolution;
     }
 
-    public int getWidth() {
+    public double getWidth() {
         return width;
     }
     
@@ -36,7 +39,7 @@ public class Screen {
     
     public Screen DeepCopy()
  {
- Screen clone = new Screen();
+ Screen clone = new Screen(getWidth(),getResolution());
  clone.resolution=resolution;
  clone.width=width;
  return clone;

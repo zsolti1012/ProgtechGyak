@@ -11,24 +11,10 @@ package Laptop;
  */
 public class Touchpad {
     
-    private double lenth;
-    private double width;
+    private double lenth=50;
+    private double width=70;
 
-    public void setLenth(double lenth) {
-        this.lenth = lenth;
-    }
-
-    public double getLenth() {
-        return lenth;
-    }
-
-    public void setWidth(double width) {
-        this.width = width;
-    }
-
-    public double getWidth() {
-        return width;
-    }
+    
     
     
     

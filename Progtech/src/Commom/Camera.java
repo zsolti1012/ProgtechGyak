@@ -10,9 +10,13 @@ package Commom;
  * @author O.Zsolt
  */
 public class Camera {
+    
+    public Camera(double mp){
+    this.megapixels=mp;
+    };
+    
     private double megapixels;
-    private double videowidth;
-    private double videolength;
+    
     
     public void setMegapixels(double megapixels) {
         this.megapixels = megapixels;
@@ -22,27 +26,12 @@ public class Camera {
         return megapixels;
     }
 
-    public void setVideolength(double videolength) {
-        this.videolength = videolength;
-    }
-
-    public double getVideolength() {
-        return videolength;
-    }
-
-    public void setVideowidth(double videowidth) {
-        this.videowidth = videowidth;
-    }
-
-    public double getVideowidth() {
-        return videowidth;
-    }
+   
     
     public Camera DeepCopy(){
-        Camera clone=new Camera();
+        Camera clone=new Camera(getMegapixels());
         clone.megapixels=megapixels;
-        clone.videolength=videolength;
-        clone.videowidth=videowidth;
+        
         
         return clone;
         

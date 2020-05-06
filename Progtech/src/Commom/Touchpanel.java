@@ -10,7 +10,7 @@ package Commom;
  * @author O.Zsolt
  */
 public class Touchpanel {
-    
+    public Touchpanel(){}
     
     public Touchpanel DeepCopy(){
         Touchpanel clone=new Touchpanel();

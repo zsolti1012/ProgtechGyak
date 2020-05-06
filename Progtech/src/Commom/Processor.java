@@ -12,15 +12,21 @@ import jdk.net.Sockets;
  * @author O.Zsolt
  */
 public class Processor {
+    public Processor(int seeds,double frequency,Socket socket){
+        this.seeds=seeds;
+        this.frequency=frequency;
+        this.socket=socket;
+    }
+    
     private int seeds;
-    private int frequency;
-    private Sockets socket;
+    private double frequency;
+    private Socket socket;
 
-    public void setSocket(Sockets socket) {
+    public void setSocket(Socket socket) {
         this.socket = socket;
     }
 
-    public Sockets getSocket() {
+    public Socket getSocket() {
         return socket;
     }
     
@@ -39,13 +45,13 @@ public class Processor {
         this.frequency = frequency;
     }
 
-    public int getFrequency() {
+    public double getFrequency() {
         return frequency;
     }
     
      public Processor DeepCopy()
  {
- Processor clone = new Processor();
+ Processor clone = new Processor(getSeeds(),getFrequency(),getSocket());
  clone.frequency=frequency;
  clone.seeds=seeds;
  clone.socket=socket;

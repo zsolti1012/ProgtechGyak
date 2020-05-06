@@ -10,28 +10,24 @@ package Laptop;
  * @author O.Zsolt
  */
 public class Wrap {
-    
-    private static double width;
-    private static double length;
-    private static double height;
+    //378 mm x 260 mm x 22,9 mm
+    private static double width=260;
+    private static double length=378;
+    private static double height=22.9;
 
-    public static void setWidth(double width) {
-        Wrap.width = width;
-    }
+    
    public static double getWidth() {
         return width;
     }
 
-    public static void setLength(double length) {
-        Wrap.length = length;
-    }
+   
  public static double getLength() {
         return length;
     }
 
-    public static void setHeight(double height) {
-        Wrap.height = height;
-    }
+    
+
+   
 
     
  public static double getHeight() {

@@ -10,28 +10,22 @@ package Phone;
  * @author O.Zsolt
  */
 public class Wrap {
-    
-    private static double width;
-    private static double length;
-    private static double height;
+    //Galaxy j3 2017
+    private static double width=70.3;
+    private static double length=140.2;
+    private static double height=8.2;
 
-    public static void setWidth(double width) {
-        Wrap.width = width;
-    }
+    
    public static double getWidth() {
         return width;
     }
 
-    public static void setLength(double length) {
-        Wrap.length = length;
-    }
+    
  public static double getLength() {
         return length;
     }
 
-    public static void setHeight(double height) {
-        Wrap.height = height;
-    }
+    
 
     
  public static double getHeight() {

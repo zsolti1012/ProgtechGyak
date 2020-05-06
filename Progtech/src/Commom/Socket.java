@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package Commom;
 
 /**
  *
  * @author O.Zsolt
  */
-public enum Sockets {
-    socket1,socket2,socket3,socket4,socket5,socket6
+public enum Socket {
+    SOCKET1,SOCKET2,SOCKET3,SOCKET4
 }

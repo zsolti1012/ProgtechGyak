@@ -10,7 +10,7 @@ package Commom;
  * @author O.Zsolt
  */
 public class Microphone {
-    
+    public Microphone(){}
     public Microphone DeepCopy(){
         Microphone clone=new Microphone();
         return clone;

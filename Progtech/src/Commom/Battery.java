@@ -9,7 +9,12 @@ package Commom;
  *
  * @author O.Zsolt
  */
-public class Battery {
+public  class Battery {
+    
+    public Battery(double mah,double volts,double h,double w,double l){
+    this.mah=mah;
+    this.volts=volts; this.height=h;this.width=w;this.length=l;
+    }
     private double mah;
     private double volts;
     
@@ -60,7 +65,7 @@ public class Battery {
     
     
     public Battery DeepCopy(){
-        Battery clone=new Battery();
+        Battery clone=new Battery(getVolts(),getMah(),getHeight(),getWidth(),getLength());
         clone.volts=volts;
         clone.mah=mah;
         clone.height=height;
