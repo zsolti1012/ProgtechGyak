@@ -13,7 +13,7 @@ public class Camera {
     private double megapixels;
     private double videowidth;
     private double videolength;
-
+    
     public void setMegapixels(double megapixels) {
         this.megapixels = megapixels;
     }

@@ -20,23 +20,29 @@ import com.sun.org.apache.xalan.internal.xsltc.cmdline.getopt.GetOpt;
  *
  * @author O.Zsolt
  */
-public interface  Motherboard {
+public abstract class  Motherboard {
+    
+    public abstract String battery();
+    public abstract String camera();
+    public abstract String memory();
+    public abstract String microphone();
+    public abstract String processor();
+    public abstract String screen();
+    public abstract String speaker();
+    
+    
+    public abstract String touchpanel();
+    public abstract String keyboard();
+    public abstract String touchpad();
+    public abstract String wrap();
     
     
     
-    public abstract Sockets supportedMemory();
-    public abstract  Sockets supportedCPU();
-    public abstract double sataissupported();
-    public abstract double usb3issupported();
     
-    public Battery battery();
-    public Camera camera();
-    public Memory memory();
-    public Microphone microphone();
-    public Processor processor();
-    public Screen screen();
-    public Speaker speaker();
-    public Touchpad touchpad();
-    public Keyboard keyboard();
+    
+    
+    
+    
+    
     
 }
