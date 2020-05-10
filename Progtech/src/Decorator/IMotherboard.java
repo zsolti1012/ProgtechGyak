@@ -1,3 +1,5 @@
+package Decorator;
+
 import Commom.Camera;
 import Commom.Battery;
 import Commom.Memory;
@@ -8,6 +10,7 @@ import Commom.Speaker;
 import Laptop.Keyboard;
 import Laptop.Touchpad;
 import com.sun.org.apache.xalan.internal.xsltc.cmdline.getopt.GetOpt;
+import java.util.ArrayList;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,8 +23,8 @@ import com.sun.org.apache.xalan.internal.xsltc.cmdline.getopt.GetOpt;
  *
  * @author O.Zsolt
  */
-public abstract class  Motherboard {
-    
+public abstract class  IMotherboard {
+    /*
     public abstract String battery();
     public abstract String camera();
     public abstract String memory();
@@ -35,7 +38,9 @@ public abstract class  Motherboard {
     public abstract String keyboard();
     public abstract String touchpad();
     public abstract String wrap();
+    */
     
+    public  abstract String  getInfo();
     
     
     

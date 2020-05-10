@@ -10,23 +10,18 @@ package Commom;
  * @author O.Zsolt
  */
 public class Speaker {
-    public Speaker(double decibels){
-        this.decibels=decibels;
+    public Speaker(){
+        
     }
     
-    private double decibels;
-
-    public void setDecibels(int decibels) {
-        this.decibels = decibels;
-    }
-
-    public double getDecibels() {
-        return decibels;
+    public String getSpeaker(){
+        return "speaker";
+        
     }
     
     public Speaker DeepCopy(){
-        Speaker clone=new Speaker(getDecibels());
-        clone.decibels=decibels;
+        Speaker clone=new Speaker();
+        
         
         return clone;
     }

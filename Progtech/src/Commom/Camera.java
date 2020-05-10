@@ -17,6 +17,9 @@ public class Camera {
     
     private double megapixels;
     
+    public String getCamera(){
+        return String.valueOf(megapixels)+"mpx camera "; 
+    }
     
     public void setMegapixels(double megapixels) {
         this.megapixels = megapixels;

@@ -22,7 +22,11 @@ public class Memory {
     private double frequency;
     private Socket socket;
     private double sizemb;
-
+    
+    public String getMemory(){
+        return String.valueOf(frequency)+String.valueOf(socket)+"battery "; 
+    }
+    
     public void setFrequency(double frequency) {
         this.frequency = frequency;
     }

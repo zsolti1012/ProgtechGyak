@@ -21,7 +21,11 @@ public  class Battery {
     private double height;
     private double width;
     private double length;
-
+    
+    public String getBattery(){
+       return String.valueOf(mah)+"battery "; 
+    }
+    
     public void setMah(double mah) {
         this.mah = mah;
     }

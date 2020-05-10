@@ -16,6 +16,9 @@ public class Screen {
         this.resolution=resolution;
     }
     
+    public String getScreen(){
+        return String.valueOf(resolution)+","+String.valueOf(width)+"' screen";
+    }
     private double width;
     private Resolution resolution;
 

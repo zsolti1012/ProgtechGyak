@@ -16,15 +16,16 @@ import Commom.Speaker;
 import Commom.Touchpanel;
 import java.net.Socket;
 import jdk.net.Sockets;
-
+import Decorator.IMotherboard;
 
 /**
  *
  * @author O.Zsolt
  */
-public class Phone {
+public class Phone extends IMotherboard {
 
   public Phone(){
+      private IMotherboard motherboard;
       
       Battery battery=new Battery(2500, 3.7, 50, 20, 5);
       Camera camera=new Camera(13.5);
@@ -34,8 +35,15 @@ public class Phone {
       Screen screen=new Screen(5, Resolution.HD);
       Speaker speaker=new Speaker(30);
       Touchpanel touchpanel=new Touchpanel();
+      
+      
               
   }
+
+    @Override
+    public String getInfo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 
 

@@ -18,6 +18,10 @@ public class Processor {
         this.socket=socket;
     }
     
+    
+    public String getProcessor(){
+       return String.valueOf(seeds)+"seeds,"+String.valueOf(frequency)+"mb processor";
+    }
     private int seeds;
     private double frequency;
     private Socket socket;

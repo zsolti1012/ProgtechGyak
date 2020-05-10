@@ -12,6 +12,10 @@ package Commom;
 public class Touchpanel {
     public Touchpanel(){}
     
+    
+    public String getTouchpanel(){
+        return "touchpanel";
+    }
     public Touchpanel DeepCopy(){
         Touchpanel clone=new Touchpanel();
         

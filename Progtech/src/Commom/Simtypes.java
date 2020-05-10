@@ -5,18 +5,12 @@
  */
 package Commom;
 
+import javafx.scene.control.SingleSelectionModel;
+
 /**
  *
  * @author O.Zsolt
  */
-public class Microphone {
-    public Microphone(){}
-    
-    public String getMicrophone(){
-        return "microphone";
-    }
-    public Microphone DeepCopy(){
-        Microphone clone=new Microphone();
-        return clone;
-    }
+public enum Simtypes {
+    SINGLESIM,DUALSIM
 }
