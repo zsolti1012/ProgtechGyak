@@ -6,6 +6,7 @@ import Commom.Memory;
 import Commom.Microphone;
 import Commom.Processor;
 import Commom.Screen;
+import Commom.Sim;
 import Commom.Simtypes;
 import Commom.Speaker;
 import Commom.Touchpanel;
@@ -23,40 +24,32 @@ import java.util.ArrayList;
  *
  * @author O.Zsolt
  */
-abstract class PhoneMotherboard extends IMotherboard{
+public class PhoneMotherboard extends Motherboard{
 
     
-    public IMotherboard phonemotherboard;
+    public Motherboard phonemotherboard=new Motherboard();
     
     //Decorator
     @Override
     public  String getInfo(){
-      return phonemotherboard.getInfo()+"Specifications: "+";"+this.speaker+";"+this.microphone.getMicrophone()+";";
+      return phonemotherboard.getInfo()+this.battery.getBattery()+";"+this.camera.getCamera()+";"+
+              this.memory.getMemory()+";"+this.processor.getProcessor()+";"+this.screen.getScreen()+";"+
+              this.touchpanel.getTouchpanel()+";"+this.simtype.GetSim()+";"+this.wrap.getWrap()+";";
     }
     
     protected Battery battery;
     protected Camera camera;
     protected Memory memory;
-    protected Microphone microphone;
     protected Processor processor;
     protected Screen screen;
-    protected Speaker speaker;
     protected Touchpanel touchpanel;
-    protected Simtypes simtype;
+    protected Sim simtype;
     protected Phone.Wrap wrap;
     
 
-      
-    //Prototype
-    Speaker sp1;
-    Microphone mc1=new Microphone();
-    
- 
-    
-    
    public PhoneMotherboard(Battery battery,Camera camera,Memory memory,
-           Processor processor,Screen screen,Touchpanel touchpanel,Simtypes simtype){
-        this.sp1 = new Speaker();
+           Processor processor,Screen screen,Touchpanel touchpanel,Sim simtype){
+       
        this.battery=battery;
        this.camera=camera;
        this.memory=memory;
@@ -65,12 +58,12 @@ abstract class PhoneMotherboard extends IMotherboard{
        this.touchpanel=touchpanel;
        this.simtype=simtype;
        
+       ///
        //Singleton
        this.wrap=Phone.Wrap.getInstance();
        
-       //DeepCopy, prototype
+      
        
-       this.speaker=sp1.DeepCopy();
-       this.microphone=mc1.DeepCopy();
+       
    }
 }

@@ -23,7 +23,7 @@ public  class Battery {
     private double length;
     
     public String getBattery(){
-       return String.valueOf(mah)+"battery "; 
+       return String.valueOf(mah)+"mah battery "; 
     }
     
     public void setMah(double mah) {

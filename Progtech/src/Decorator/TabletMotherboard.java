@@ -6,9 +6,12 @@ import Commom.Memory;
 import Commom.Microphone;
 import Commom.Processor;
 import Commom.Screen;
+import Commom.Sim;
 import Commom.Simtypes;
 import Commom.Speaker;
 import Commom.Touchpanel;
+import Phone.Wrap;
+import java.util.ArrayList;
 
 
 /*
@@ -21,33 +24,32 @@ import Commom.Touchpanel;
  *
  * @author O.Zsolt
  */
-abstract class TabletMotherboard extends IMotherboard{
+abstract class TabletMotherboard extends Motherboard{
 
-    private IMotherboard tabletmotherboard;
+    
+    public Motherboard tabletmotherboard;
+    
+    //Decorator
     @Override
     public  String getInfo(){
-      return tabletmotherboard.getInfo()+"Specifications: "+";"+this.speaker+";"+this.microphone.getMicrophone()+";";
+      return tabletmotherboard.getInfo()+this.battery.getBattery()+";"+this.camera.getCamera()+";"+
+              this.memory.getMemory()+";"+this.processor.getProcessor()+";"+this.screen.getScreen()+";"+
+              this.touchpanel.getTouchpanel()+";"+this.wrap.getWrap()+";";
     }
     
     protected Battery battery;
     protected Camera camera;
     protected Memory memory;
-    protected Microphone microphone;
     protected Processor processor;
     protected Screen screen;
-    protected Speaker speaker;
     protected Touchpanel touchpanel;
-    protected Simtypes simtype;
+    
     protected Tablet.Wrap wrap;
     
-    
-    //Prototype
-    Speaker sp1=new Speaker();
-    Microphone mc1=new Microphone();
-    
-    
+
    public TabletMotherboard(Battery battery,Camera camera,Memory memory,
            Processor processor,Screen screen,Touchpanel touchpanel){
+   
        this.battery=battery;
        this.camera=camera;
        this.memory=memory;
@@ -56,12 +58,12 @@ abstract class TabletMotherboard extends IMotherboard{
        this.touchpanel=touchpanel;
        
        
+       ///
        //Singleton
        this.wrap=Tablet.Wrap.getInstance();
        
-       //DeepCopy, prototype
+      
        
-       this.speaker=sp1.DeepCopy();
-       this.microphone=mc1.DeepCopy();
+       
    }
 }

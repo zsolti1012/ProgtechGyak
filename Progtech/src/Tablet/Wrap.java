@@ -32,7 +32,9 @@ public class Wrap {
     }
     
     
-    
+    public String getWrap(){
+        return "wrap";
+    }
     
     private static Wrap uniqueInstance=null;
     //privát konstruktor

@@ -24,7 +24,7 @@ public class Memory {
     private double sizemb;
     
     public String getMemory(){
-        return String.valueOf(frequency)+String.valueOf(socket)+"battery "; 
+        return String.valueOf(sizemb)+  "mb Memory"; 
     }
     
     public void setFrequency(double frequency) {

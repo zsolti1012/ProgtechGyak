@@ -31,7 +31,9 @@ public class Wrap {
  public static double getHeight() {
         return height;
     }
-    
+    public String getWrap(){
+        return "wrap";
+    }
     private static Wrap uniqueInstance=null;
     //privát konstruktor
     private Wrap(){}
