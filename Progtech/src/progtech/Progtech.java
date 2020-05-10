@@ -16,12 +16,15 @@ import Commom.Simtypes;
 import Commom.Socket;
 import Commom.Touchpanel;
 import Decorator.LaptopMotherboard;
+import Decorator.Motherboard;
 import sun.awt.windows.WPrinterJob;
 import Decorator.PhoneMotherboard;
 import Decorator.TabletMotherboard;
 import Laptop.Keyboard;
 import Laptop.National;
 import Laptop.Touchpad;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -32,11 +35,11 @@ public class Progtech {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Battery b=new Battery(12, 5, 12, 5, 5);
         Camera c=new Camera(15);
-        Memory m=new Memory(15, Socket.SOCKET2, 1000);
-        Processor p=new Processor(2, 1300, Socket.SOCKET1);
+        Memory m=new Memory(15, Socket.SOCKET3, 1000);
+        Processor p=new Processor(2, 1300, Socket.SOCKET3);
         Screen s=new Screen(500, Resolution.FULLHD);
         Touchpanel t=new Touchpanel();
         Sim sim=new Sim(Simtypes.SINGLESIM);
@@ -45,13 +48,13 @@ public class Progtech {
         Keyboard kb=new Keyboard(National.HUN, 101);
                 
           
-        PhoneMotherboard pm=new PhoneMotherboard(b, c, m, p, s, t, sim);
+        PhoneMotherboard pm=new PhoneMotherboard(b, c, m, p, s, t, sim,Socket.SOCKET3,Socket.SOCKET3);
         System.out.println(pm.getInfo());
         
-        TabletMotherboard tm=new TabletMotherboard(b, c, m, p, s, t);
+        TabletMotherboard tm=new TabletMotherboard(b, c, m, p, s, t,Socket.SOCKET3,Socket.SOCKET3);
         System.out.println(tm.getInfo());
         
-        LaptopMotherboard lm=new LaptopMotherboard(b, c, m, p, s, kb, tc);
+        LaptopMotherboard lm=new LaptopMotherboard(b, c, m, p, s, kb, tc,Socket.SOCKET3,Socket.SOCKET3);
         System.out.println(lm.getInfo());
         
         

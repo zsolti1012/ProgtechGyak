@@ -8,8 +8,11 @@ import Commom.Processor;
 import Commom.Screen;
 import Commom.Sim;
 import Commom.Simtypes;
+import Commom.Socket;
 import Commom.Speaker;
 import Commom.Touchpanel;
+import Exceptions.Notvalidmemorysocket;
+import Exceptions.Notvalidprocessorsocket;
 import Phone.Wrap;
 import java.util.ArrayList;
 
@@ -43,12 +46,14 @@ public class TabletMotherboard extends Motherboard{
     protected Processor processor;
     protected Screen screen;
     protected Touchpanel touchpanel;
+    protected Socket memorysocket;
+    protected Socket processorsocket;
     
     protected Tablet.Wrap wrap;
     
 
    public TabletMotherboard(Battery battery,Camera camera,Memory memory,
-           Processor processor,Screen screen,Touchpanel touchpanel){
+           Processor processor,Screen screen,Touchpanel touchpanel,Socket memorysocket,Socket processorsocket){
    
        this.battery=battery;
        this.camera=camera;
@@ -56,6 +61,8 @@ public class TabletMotherboard extends Motherboard{
        this.processor=processor;
        this.screen=screen;
        this.touchpanel=touchpanel;
+       this.memorysocket=memorysocket;
+       this.processorsocket=processorsocket;
        
        
        ///
@@ -63,7 +70,12 @@ public class TabletMotherboard extends Motherboard{
        this.wrap=Tablet.Wrap.getInstance();
        
       
-       
+       if (this.memorysocket!=this.memory.getSocket()) {
+           throw new Notvalidmemorysocket();
+       }
+       if(this.processorsocket!=this.processor.getSocket()){
+           throw new Notvalidprocessorsocket();
+       }
        
    }
 }

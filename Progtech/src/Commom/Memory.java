@@ -16,7 +16,7 @@ public class Memory {
     
     public Memory(double frequency,Socket socket,double sizemb){
        this.frequency=frequency;
-       this.socket=this.socket;
+       this.socket=socket;
        this.sizemb=sizemb;
     }
     private double frequency;
