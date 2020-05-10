@@ -24,6 +24,10 @@ public class Wrap {
  public static double getLength() {
         return length;
     }
+ 
+ public String getWrap(){
+     return String.valueOf(width)+"x"+String.valueOf(length)+"x"+String.valueOf(height)+ "wrap";
+ }
 
     
 

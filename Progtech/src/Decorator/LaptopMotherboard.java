@@ -10,6 +10,8 @@ import Commom.Sim;
 import Commom.Simtypes;
 import Commom.Speaker;
 import Commom.Touchpanel;
+import Laptop.Keyboard;
+import Laptop.Touchpad;
 import Phone.Wrap;
 import java.util.ArrayList;
 
@@ -24,17 +26,17 @@ import java.util.ArrayList;
  *
  * @author O.Zsolt
  */
-public class TabletMotherboard extends Motherboard{
+public class LaptopMotherboard extends Motherboard{
 
     
-    public Motherboard tabletmotherboard=new Motherboard();
+    public Motherboard laptopmotherboard=new Motherboard();
     
     //Decorator
     @Override
     public  String getInfo(){
-      return tabletmotherboard.getInfo()+this.battery.getBattery()+";"+this.camera.getCamera()+";"+
-              this.memory.getMemory()+";"+this.processor.getProcessor()+";"+this.screen.getScreen()+";"+
-              this.touchpanel.getTouchpanel()+";"+this.wrap.getWrap()+";";
+      return laptopmotherboard.getInfo()+this.battery.getBattery()+";"+this.camera.getCamera()+";"+
+              this.memory.getMemory()+";"+this.processor.getProcessor()+";"+this.screen.getScreen()+
+              ";"+this.keyboard.getKeyboard()+";"+this.touchpad.getTouchpad()+";"+this.wrap.getWrap();
     }
     
     protected Battery battery;
@@ -42,25 +44,30 @@ public class TabletMotherboard extends Motherboard{
     protected Memory memory;
     protected Processor processor;
     protected Screen screen;
-    protected Touchpanel touchpanel;
     
-    protected Tablet.Wrap wrap;
+    protected Keyboard keyboard;
+    protected Touchpad touchpad;
+    
+    
+    protected Laptop.Wrap wrap;
     
 
-   public TabletMotherboard(Battery battery,Camera camera,Memory memory,
-           Processor processor,Screen screen,Touchpanel touchpanel){
+   public LaptopMotherboard(Battery battery,Camera camera,Memory memory,
+           Processor processor,Screen screen,Keyboard keyboard,Touchpad touchpad){
    
        this.battery=battery;
        this.camera=camera;
        this.memory=memory;
        this.processor=processor;
        this.screen=screen;
-       this.touchpanel=touchpanel;
+       this.keyboard=keyboard;
+       this.touchpad=touchpad;
+      
        
        
        ///
        //Singleton
-       this.wrap=Tablet.Wrap.getInstance();
+       this.wrap=Laptop.Wrap.getInstance();
        
       
        

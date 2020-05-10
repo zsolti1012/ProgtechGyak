@@ -12,15 +12,21 @@ package Laptop;
 public class Keyboard {
     
    
-    private National nat=National.HUN;
-    private int buttons=101;
+    private National nat;
+    private int buttons;
     
     
 
+    public String getKeyboard(){
+        return String.valueOf(nat)+" keyboard";
+    }
     
     
-    
-    
+    public Keyboard(National nat,int buttons){
+        this.buttons=buttons;
+        this.nat=nat;
+        
+    }
     
     private static Keyboard uniqueInstance=null;
     //privát konstruktor

@@ -15,8 +15,13 @@ import Commom.Sim;
 import Commom.Simtypes;
 import Commom.Socket;
 import Commom.Touchpanel;
+import Decorator.LaptopMotherboard;
 import sun.awt.windows.WPrinterJob;
 import Decorator.PhoneMotherboard;
+import Decorator.TabletMotherboard;
+import Laptop.Keyboard;
+import Laptop.National;
+import Laptop.Touchpad;
 
 /**
  *
@@ -35,9 +40,19 @@ public class Progtech {
         Screen s=new Screen(500, Resolution.FULLHD);
         Touchpanel t=new Touchpanel();
         Sim sim=new Sim(Simtypes.SINGLESIM);
+        
+        Touchpad tc=new Touchpad();
+        Keyboard kb=new Keyboard(National.HUN, 101);
+                
           
         PhoneMotherboard pm=new PhoneMotherboard(b, c, m, p, s, t, sim);
         System.out.println(pm.getInfo());
+        
+        TabletMotherboard tm=new TabletMotherboard(b, c, m, p, s, t);
+        System.out.println(tm.getInfo());
+        
+        LaptopMotherboard lm=new LaptopMotherboard(b, c, m, p, s, kb, tc);
+        System.out.println(lm.getInfo());
         
         
     }

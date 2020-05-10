@@ -32,7 +32,7 @@ public class Wrap {
         return height;
     }
     public String getWrap(){
-        return "wrap";
+        return String.valueOf(width)+"x"+String.valueOf(length)+"x"+String.valueOf(height)+ "wrap";
     }
     private static Wrap uniqueInstance=null;
     //privát konstruktor
