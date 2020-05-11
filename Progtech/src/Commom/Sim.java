@@ -31,7 +31,7 @@ public class Sim {
     public Sim DeepCopy()
  {
  Sim clone = new Sim(getSimtype());
- clone.simtype=simtype;
+ clone.setSimtype(getSimtype());
  
  return clone;
  }

@@ -83,9 +83,9 @@ public class Progtech {
                 laptopProcessor.DeepCopy(), laptopScreen.DeepCopy(),  Socket.SOCKET3, Socket.SOCKET3);
         
         
-        phones=mf.PhoneManufacturing(20, pm);
-        tablets=mf.TabletManufacturing(25, tm);
-        laptops=mf.LaptopManufacturing(30, lm);
+        phones=mf.PhoneManufacturing(20, pm.DeepCopy());
+        tablets=mf.TabletManufacturing(25,tm.DeepCopy());
+        laptops=mf.LaptopManufacturing(30, lm.DeepCopy());
         
         
         System.out.println("done");

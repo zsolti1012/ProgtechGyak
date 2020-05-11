@@ -89,4 +89,20 @@ public class LaptopMotherboard extends Motherboard{
        
    }
    
+    public LaptopMotherboard DeepCopy() throws Exception{
+        LaptopMotherboard clone=new LaptopMotherboard(battery, camera, memory, processor, screen, memorysocket, processorsocket);
+       clone.battery=battery;
+       clone.camera=camera;
+       clone.memory=memory;
+       clone.processor=processor;
+       clone.screen=screen;
+       
+       
+       clone.memorysocket=memorysocket;
+       clone.processorsocket=processorsocket;
+        
+        return clone;
+    
+}
+   
 }

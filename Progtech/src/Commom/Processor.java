@@ -45,7 +45,7 @@ public class Processor {
         return seeds;
     }
 
-    public void setFrequency(int frequency) {
+    public void setFrequency(double frequency) {
         this.frequency = frequency;
     }
 
@@ -56,9 +56,9 @@ public class Processor {
      public Processor DeepCopy()
  {
  Processor clone = new Processor(getSeeds(),getFrequency(),getSocket());
- clone.frequency=frequency;
- clone.seeds=seeds;
- clone.socket=socket;
+ clone.setFrequency(getFrequency());
+ clone.setSeeds(getSeeds());
+ clone.setSocket(getSocket());
  
  return clone;
  }

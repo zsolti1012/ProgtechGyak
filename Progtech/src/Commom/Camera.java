@@ -32,8 +32,8 @@ public class Camera {
    
     
     public Camera DeepCopy(){
-        Camera clone=new Camera(getMegapixels());
-        clone.megapixels=megapixels;
+        Camera clone=new Camera(this.getMegapixels());
+        clone.setMegapixels(getMegapixels());
         
         
         return clone;

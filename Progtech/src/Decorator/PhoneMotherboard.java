@@ -27,7 +27,7 @@ import java.util.ArrayList;
  *
  * @author O.Zsolt
  */
-public class PhoneMotherboard extends Motherboard{
+public final class PhoneMotherboard extends Motherboard{
 
     
     public Motherboard phonemotherboard=new Motherboard();
@@ -50,6 +50,53 @@ public class PhoneMotherboard extends Motherboard{
     public Phone.Wrap wrap;
     public Socket memorysocket;
     public Socket processorsocket;
+    
+    public Battery getBattery() {
+        return battery;
+    }
+
+    public Camera getCamera() {
+        return camera;
+    }
+
+    public Memory getMemory() {
+        return memory;
+    }
+
+    public Processor getProcessor() {
+        return processor;
+    }
+
+    public Screen getScreen() {
+        return screen;
+    }
+
+    public Touchpanel getTouchpanel() {
+        return touchpanel;
+    }
+
+    public Sim getSimtype() {
+        return simtype;
+    }
+
+    public Wrap getWrap() {
+        return wrap;
+    }
+
+    public Socket getMemorysocket() {
+        return memorysocket;
+    }
+
+    public Socket getProcessorsocket() {
+        return processorsocket;
+    }
+
+    public void setCamera(Camera camera) {
+        this.camera = camera;
+    }
+    
+    
+    
     
     
 
@@ -78,4 +125,23 @@ public class PhoneMotherboard extends Motherboard{
        
        
    }
+   
+   
+   //Decorator
+   public PhoneMotherboard DeepCopy(){
+        PhoneMotherboard clone=new PhoneMotherboard(this.getBattery(), this.getCamera(), this.getMemory(), this.getProcessor(), 
+                this.getScreen(), this.getTouchpanel(), this.getSimtype(), this.getMemorysocket(), this.getProcessorsocket());
+       clone.battery=getBattery();
+       clone.camera=getCamera();
+       clone.memory=getMemory();
+       clone.processor=getProcessor();
+       clone.screen=getScreen();
+       clone.touchpanel=getTouchpanel();
+       clone.simtype=getSimtype();
+       clone.memorysocket=getMemorysocket();
+       clone.processorsocket=getProcessorsocket();
+        
+        return clone;
+    
+}
 }

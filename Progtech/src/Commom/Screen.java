@@ -26,7 +26,7 @@ public class Screen {
         this.resolution = resolution;
     }
 
-    public void setWidth(int width) {
+    public void setWidth(double width) {
         this.width = width;
     }
 
@@ -43,8 +43,8 @@ public class Screen {
     public Screen DeepCopy()
  {
  Screen clone = new Screen(getWidth(),getResolution());
- clone.resolution=resolution;
- clone.width=width;
+ clone.setResolution(getResolution());
+ clone.setWidth(getWidth());
  return clone;
  }
 

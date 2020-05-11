@@ -55,9 +55,9 @@ public class Memory {
     
     public Memory DeepCopy(){
         Memory clone=new Memory(getFrequency(),getSocket(),getSizemb());
-        clone.sizemb=sizemb;
-        clone.frequency=frequency;
-        clone.socket=socket;
+        clone.setSizemb(getSizemb());
+        clone.setFrequency(getFrequency());
+        clone.setSocket(getSocket());
         
         
         

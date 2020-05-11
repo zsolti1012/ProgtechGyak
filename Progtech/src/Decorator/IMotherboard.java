@@ -23,7 +23,7 @@ import java.util.ArrayList;
  *
  * @author O.Zsolt
  */
-public abstract class  IMotherboard {
+public abstract class  IMotherboard  {
     /*
     public abstract String battery();
     public abstract String camera();

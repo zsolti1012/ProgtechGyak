@@ -69,12 +69,12 @@ public  class Battery {
     
     
     public Battery DeepCopy(){
-        Battery clone=new Battery(getVolts(),getMah(),getHeight(),getWidth(),getLength());
-        clone.volts=volts;
-        clone.mah=mah;
-        clone.height=height;
-        clone.width=width;
-        clone.length=length;
+        Battery clone=new Battery(this.getVolts(),getMah(),getHeight(),getWidth(),getLength());
+        clone.setVolts(getVolts());
+        clone.setMah(getMah());
+        clone.setHeight(getHeight());
+        clone.setWidth(getWidth());
+        clone.setLength(getLength());
         
         return clone;
     

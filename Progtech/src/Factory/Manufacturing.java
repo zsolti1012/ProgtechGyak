@@ -40,7 +40,7 @@ public class Manufacturing {
            Phones=new ArrayList<PhoneMotherboard>();
            for (int i = 0; i < piece; i++) {
                
-               Phones.add(new PhoneMotherboard(pm.battery, pm.camera, pm.memory, pm.processor, pm.screen, pm.touchpanel, pm.simtype, pm.memorysocket, pm.processorsocket));
+               Phones.add(new PhoneMotherboard(pm.battery, pm.camera.DeepCopy(), pm.memory, pm.processor, pm.screen, pm.touchpanel, pm.simtype, pm.memorysocket, pm.processorsocket));
            }
            
            return Phones;

@@ -78,4 +78,20 @@ public class TabletMotherboard extends Motherboard{
        }
        
    }
+    //Decorator
+   public TabletMotherboard DeepCopy(){
+        TabletMotherboard clone=new TabletMotherboard(battery, camera, memory, processor, screen, touchpanel,  memorysocket, processorsocket);
+       clone.battery=battery;
+       clone.camera=camera;
+       clone.memory=memory;
+       clone.processor=processor;
+       clone.screen=screen;
+       clone.touchpanel=touchpanel;
+       
+       clone.memorysocket=memorysocket;
+       clone.processorsocket=processorsocket;
+        
+        return clone;
+    
+}
 }
