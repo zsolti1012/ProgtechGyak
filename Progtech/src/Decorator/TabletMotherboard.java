@@ -40,16 +40,16 @@ public class TabletMotherboard extends Motherboard{
               this.touchpanel.getTouchpanel()+";"+this.wrap.getWrap()+";";
     }
     
-    protected Battery battery;
-    protected Camera camera;
-    protected Memory memory;
-    protected Processor processor;
-    protected Screen screen;
-    protected Touchpanel touchpanel;
-    protected Socket memorysocket;
-    protected Socket processorsocket;
+    public Battery battery;
+    public Camera camera;
+    public Memory memory;
+    public Processor processor;
+    public Screen screen;
+    public Touchpanel touchpanel;
+    public Socket memorysocket;
+    public Socket processorsocket;
     
-    protected Tablet.Wrap wrap;
+    public Tablet.Wrap wrap;
     
 
    public TabletMotherboard(Battery battery,Camera camera,Memory memory,

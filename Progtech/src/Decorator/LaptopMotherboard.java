@@ -43,23 +43,23 @@ public class LaptopMotherboard extends Motherboard{
               this.memory.getMemory()+";"+this.processor.getProcessor()+";"+this.screen.getScreen()+
               ";"+this.keyboard.getKeyboard()+";"+this.touchpad.getTouchpad()+";"+this.wrap.getWrap();
     }
-    protected Socket memorysocket;
-    protected Socket processorsocket;
-    protected Battery battery;
-    protected Camera camera;
-    protected Memory memory;
-    protected Processor processor;
-    protected Screen screen;
+    public Socket memorysocket;
+    public Socket processorsocket;
+    public Battery battery;
+    public Camera camera;
+    public Memory memory;
+    public Processor processor;
+    public Screen screen;
     
-    protected Keyboard keyboard;
-    protected Touchpad touchpad;
+    public Keyboard keyboard;
+    public Touchpad touchpad;
     
     
-    protected Laptop.Wrap wrap;
+    public Laptop.Wrap wrap;
     
 
    public LaptopMotherboard(Battery battery,Camera camera,Memory memory,
-           Processor processor,Screen screen,Keyboard keyboard,Touchpad touchpad,Socket memorysocket,Socket processorsocket) throws Exception{
+           Processor processor,Screen screen,Socket memorysocket,Socket processorsocket) throws Exception{
    
        this.battery=battery;
        this.camera=camera;
@@ -75,6 +75,8 @@ public class LaptopMotherboard extends Motherboard{
        ///
        //Singleton
        this.wrap=Laptop.Wrap.getInstance();
+       this.touchpad=Touchpad.getInstance();
+       this.keyboard=Keyboard.getInstance();
        
        if (this.memorysocket!=this.memory.getSocket()) {
            throw new Notvalidmemorysocket();

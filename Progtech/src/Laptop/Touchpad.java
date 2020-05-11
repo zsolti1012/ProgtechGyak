@@ -26,7 +26,7 @@ public class Touchpad {
     
     private static Touchpad uniqueInstance=null;
     //privát konstruktor
-    public Touchpad(){}
+    private Touchpad(){}
     
     public static Touchpad getInstance()
     {

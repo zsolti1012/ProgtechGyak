@@ -40,16 +40,16 @@ public class PhoneMotherboard extends Motherboard{
               this.touchpanel.getTouchpanel()+";"+this.simtype.GetSim()+";"+this.wrap.getWrap()+";";
     }
     
-    protected Battery battery;
-    protected Camera camera;
-    protected Memory memory;
-    protected Processor processor;
-    protected Screen screen;
-    protected Touchpanel touchpanel;
-    protected Sim simtype;
-    protected Phone.Wrap wrap;
-    protected Socket memorysocket;
-    protected Socket processorsocket;
+    public Battery battery;
+    public Camera camera;
+    public Memory memory;
+    public Processor processor;
+    public Screen screen;
+    public Touchpanel touchpanel;
+    public Sim simtype;
+    public Phone.Wrap wrap;
+    public Socket memorysocket;
+    public Socket processorsocket;
     
     
 

@@ -12,8 +12,8 @@ package Laptop;
 public class Keyboard {
     
    
-    private National nat;
-    private int buttons;
+    private National nat=National.HUN;
+    private int buttons=101;
     
     
 
@@ -22,11 +22,7 @@ public class Keyboard {
     }
     
     
-    public Keyboard(National nat,int buttons){
-        this.buttons=buttons;
-        this.nat=nat;
-        
-    }
+    
     
     private static Keyboard uniqueInstance=null;
     //privát konstruktor
