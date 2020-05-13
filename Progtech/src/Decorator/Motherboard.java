@@ -19,21 +19,24 @@ public class Motherboard extends IMotherboard{
     
     @Override
     public String getInfo() {
-        return "Specifications: "+";"+this.speaker.getSpeaker()+";"+this.microphone.getMicrophone()+";";
+        return "Specifications: "+this.speaker.getSpeaker()+";"+this.microphone.getMicrophone()+";";
     }
     
     
-    protected Microphone microphone;
-    protected Speaker speaker;
+    
     
     //Prototype
-    Speaker sp1=new Speaker();
-    Microphone mc1=new Microphone();
+    
+    
+    
+    
+    
     
     public Motherboard(){
-        
+        if(microphone==null) microphone=new Microphone();
+        if(speaker==null) speaker=new Speaker();
          //DeepCopy, prototype
-        this.speaker=sp1.DeepCopy();
-       this.microphone=mc1.DeepCopy();
+        this.speaker=speaker.DeepCopy();
+       this.microphone=microphone.DeepCopy();
     }
 }

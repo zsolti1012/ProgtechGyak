@@ -24,7 +24,11 @@ import java.util.ArrayList;
  * @author O.Zsolt
  */
 public abstract class  IMotherboard  {
+     protected Microphone microphone=new Microphone();
+    protected Speaker speaker=new Speaker();
     /*
+    
+   
     public abstract String battery();
     public abstract String camera();
     public abstract String memory();

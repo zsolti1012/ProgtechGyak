@@ -70,13 +70,27 @@ public class TabletMotherboard extends Motherboard{
        this.wrap=Tablet.Wrap.getInstance();
        
       
-       if (this.memorysocket!=this.memory.getSocket()) {
-           throw new Notvalidmemorysocket();
-       }
-       if(this.processorsocket!=this.processor.getSocket()){
-           throw new Notvalidprocessorsocket();
-       }
+        if(!MemoryCompatibility(this.memory)){
+            throw new Notvalidmemorysocket();
+        }
        
+      if(!ProcessorCompatibility(this.processor)){
+          throw new  Notvalidprocessorsocket();
+      }
+      
+       
+       
+   }
+   
+   public boolean MemoryCompatibility(Memory memory){
+       if (this.memorysocket!=this.memory.getSocket()) return false;
+       else return true;
+      
+   }
+   
+   public boolean ProcessorCompatibility(Processor processzor){
+        if(this.processorsocket!=this.processor.getSocket()){return false;}
+        else return true;
    }
     //Decorator
    public TabletMotherboard DeepCopy(){

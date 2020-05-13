@@ -41,7 +41,7 @@ public class LaptopMotherboard extends Motherboard{
         
       return laptopmotherboard.getInfo()+this.battery.getBattery()+";"+this.camera.getCamera()+";"+
               this.memory.getMemory()+";"+this.processor.getProcessor()+";"+this.screen.getScreen()+
-              ";"+this.keyboard.getKeyboard()+";"+this.touchpad.getTouchpad()+";"+this.wrap.getWrap();
+              ";"+this.keyboard.getKeyboard()+";"+this.touchpad.getTouchpad()+";"+this.wrap.getWrap()+";";
     }
     public Socket memorysocket;
     public Socket processorsocket;
@@ -78,14 +78,14 @@ public class LaptopMotherboard extends Motherboard{
        this.touchpad=Touchpad.getInstance();
        this.keyboard=Keyboard.getInstance();
        
-        /*if(!MemoryCompatibility(this.memory)){
+        if(!MemoryCompatibility(this.memory)){
             throw new Notvalidmemorysocket();
         }
-       */
-       /*if(this.processorsocket!=this.processor.getSocket()){
-           throw new Notvalidprocessorsocket();
-       }
-      */
+       
+      if(!ProcessorCompatibility(this.processor)){
+          throw new  Notvalidprocessorsocket();
+      }
+      
        
        
    }
@@ -94,6 +94,11 @@ public class LaptopMotherboard extends Motherboard{
        if (this.memorysocket!=this.memory.getSocket()) return false;
        else return true;
       
+   }
+   
+   public boolean ProcessorCompatibility(Processor processzor){
+        if(this.processorsocket!=this.processor.getSocket()){return false;}
+        else return true;
    }
    
     public LaptopMotherboard DeepCopy() throws Exception{

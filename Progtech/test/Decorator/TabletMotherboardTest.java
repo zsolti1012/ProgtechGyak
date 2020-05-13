@@ -11,45 +11,39 @@ import Commom.Memory;
 import Commom.Processor;
 import Commom.Resolution;
 import Commom.Screen;
+import Commom.Sim;
+import Commom.Simtypes;
 import Commom.Socket;
-import Exceptions.NotvalidBatteryValue;
-import Exceptions.NotvalidMemory;
-import static com.oracle.nio.BufferSecrets.instance;
+import Commom.Touchpanel;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import org.junit.Rule;
-import org.junit.rules.ExpectedException;
 
 /**
  *
  * @author O.Zsolt
  */
-public class LaptopMotherboardTest {
+public class TabletMotherboardTest {
     
-    public LaptopMotherboardTest() throws Exception {
-        
-        
-        
+    public TabletMotherboardTest() {
     }
     
-    
-    
-        Battery laptopBattery=new Battery(20, 20, 500, 50, 60);
-        Camera laptopCamera=new Camera(1.3);
-        Memory laptopMemory=new Memory(256, Socket.SOCKET3, 8000);
-        Processor laptopProcessor=new Processor(8, 3000, Socket.SOCKET3);
-        Screen laptopScreen=new Screen(10, Resolution.FULLHD);
+   Battery tabletbattery=new Battery(5000, 3.75, 80, 5, 40);
+        Camera tabletcamera=new Camera(3);
+        Memory tabletmemory=new Memory(256, Socket.SOCKET3, 4000);
+        Processor tabletprocessor=new Processor(4, 1300, Socket.SOCKET3);
+        Screen tabletscreen=new Screen(10, Resolution.HD);
+        Touchpanel tablettouchpanel=new Touchpanel();
+        
+        TabletMotherboard lm=new TabletMotherboard(tabletbattery.DeepCopy(), tabletcamera.DeepCopy(), tabletmemory.DeepCopy(),
+                tabletprocessor.DeepCopy(), tabletscreen.DeepCopy(), tablettouchpanel.DeepCopy(), Socket.SOCKET3, Socket.SOCKET3);
+        
     
         
-        LaptopMotherboard lm=new LaptopMotherboard(laptopBattery.DeepCopy(), laptopCamera.DeepCopy(), laptopMemory.DeepCopy(),
-                laptopProcessor.DeepCopy(), laptopScreen.DeepCopy(),  Socket.SOCKET3, Socket.SOCKET3);
-    
-   
-        int db=0;
+    int db=0;
         
     
      @Test
@@ -57,20 +51,17 @@ public class LaptopMotherboardTest {
          for (int i = 0; i < lm.getInfo().length(); i++) {
              if(lm.getInfo().charAt(i)==';')db++;
          }
-         assertEquals(db, 10, 0);
+         assertEquals(db, 9, 0);
      }
-    
-    /**
-     * Test of MemoryCompatibility method, of class LaptopMotherboard.
-     */
+        
     @Test
     public void testMemoryCompatibility() throws Exception {
         System.out.println("MemoryCompatibility");
         Memory memory=new Memory(256, Socket.SOCKET3, 1024);
-        LaptopMotherboard laptop=new LaptopMotherboard(laptopBattery.DeepCopy(), laptopCamera.DeepCopy(),
-                memory, laptopProcessor.DeepCopy(), laptopScreen.DeepCopy(), Socket.SOCKET3, Socket.SOCKET3);
+         TabletMotherboard tablet=new TabletMotherboard(tabletbattery.DeepCopy(), tabletcamera.DeepCopy(), memory,
+                tabletprocessor.DeepCopy(), tabletscreen.DeepCopy(), tablettouchpanel.DeepCopy(), Socket.SOCKET3, Socket.SOCKET3);
         boolean expResult = false;
-        boolean result = laptop.MemoryCompatibility(memory);
+        boolean result = tablet.MemoryCompatibility(memory);
         assertTrue("Memory socket not combatible with motherboard!", result);
         
         
@@ -80,10 +71,10 @@ public class LaptopMotherboardTest {
     public void testProcessorCompatibility() throws Exception {
         System.out.println("ProcessorCompatibility");
         Processor processor=new Processor(4, 512, Socket.SOCKET3);
-        LaptopMotherboard laptop=new LaptopMotherboard(laptopBattery.DeepCopy(), laptopCamera.DeepCopy(),
-                laptopMemory.DeepCopy(), processor, laptopScreen.DeepCopy(), Socket.SOCKET3, Socket.SOCKET3);
+         TabletMotherboard tablet=new TabletMotherboard(tabletbattery.DeepCopy(), tabletcamera.DeepCopy(), tabletmemory.DeepCopy(),
+                processor, tabletscreen.DeepCopy(), tablettouchpanel.DeepCopy(), Socket.SOCKET3, Socket.SOCKET3);
         boolean expResult = false;
-        boolean result = laptop.ProcessorCompatibility(processor);
+        boolean result = tablet.ProcessorCompatibility(processor);
         assertTrue("Processor socket not combatible with motherboard!", result);
         
         
@@ -100,7 +91,7 @@ public class LaptopMotherboardTest {
     
     @Test
     public void TestPrototype() throws Exception{
-       LaptopMotherboard l2=lm.DeepCopy();
+       TabletMotherboard l2=lm.DeepCopy();
         assertEquals("Not equals!",lm.battery.getMah(), l2.battery.getMah(),0);
         assertEquals("Not equals!",lm.camera.getMegapixels(), l2.camera.getMegapixels(),0);
         assertEquals("Not equals!",lm.memory.getFrequency(), l2.memory.getFrequency(),0);
@@ -112,25 +103,20 @@ public class LaptopMotherboardTest {
         
     }
     
-    
     @Test
     public void GetInfoTest(){
         assertNotNull(lm.getInfo());
     }
     
+    
     @Test
     public void ScreenTest() throws Exception{
         
-        Screen screen=new Screen(15, Resolution.FULLHD);
+        Screen screen=new Screen(5, Resolution.FULLHD);
         
        
     }
     
-   
 
-    
-    
-    
-    
     
 }

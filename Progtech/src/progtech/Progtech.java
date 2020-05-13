@@ -87,7 +87,7 @@ public class Progtech {
         tablets=mf.TabletManufacturing(25,tm.DeepCopy());
         laptops=mf.LaptopManufacturing(30, lm.DeepCopy());
         
-        
+        System.out.println(lm.getInfo());
         System.out.println("done");
     }
     
