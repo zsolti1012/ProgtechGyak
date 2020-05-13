@@ -33,8 +33,8 @@ public class Motherboard extends IMotherboard{
     
     
     public Motherboard(){
-        if(microphone==null) microphone=new Microphone();
-        if(speaker==null) speaker=new Speaker();
+        //if(microphone==null) microphone=new Microphone();
+        //if(speaker==null) speaker=new Speaker();
          //DeepCopy, prototype
         this.speaker=speaker.DeepCopy();
        this.microphone=microphone.DeepCopy();
