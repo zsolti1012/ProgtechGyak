@@ -33,6 +33,9 @@ public class Motherboard extends IMotherboard{
     
     
     public Motherboard(){
+        
+        //Prototype
+        
         //if(microphone==null) microphone=new Microphone();
         //if(speaker==null) speaker=new Speaker();
          //DeepCopy, prototype
