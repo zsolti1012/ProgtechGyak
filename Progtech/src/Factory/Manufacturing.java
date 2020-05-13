@@ -40,7 +40,8 @@ public class Manufacturing {
            Phones=new ArrayList<PhoneMotherboard>();
            for (int i = 0; i < piece; i++) {
                
-               Phones.add(new PhoneMotherboard(pm.battery, pm.camera.DeepCopy(), pm.memory, pm.processor, pm.screen, pm.touchpanel, pm.simtype, pm.memorysocket, pm.processorsocket));
+               //Phones.add(new PhoneMotherboard(pm.battery, pm.camera.DeepCopy(), pm.memory, pm.processor, pm.screen, pm.touchpanel, pm.simtype, pm.memorysocket, pm.processorsocket));
+               Phones.add(pm.DeepCopy());
            }
            
            return Phones;
@@ -50,7 +51,8 @@ public class Manufacturing {
            Tablets=new ArrayList<TabletMotherboard>();
            for (int i = 0; i < piece; i++) {
                
-               Tablets.add(new TabletMotherboard(pm.battery, pm.camera, pm.memory, pm.processor, pm.screen, pm.touchpanel,  pm.memorysocket, pm.processorsocket));
+               //Tablets.add(new TabletMotherboard(pm.battery, pm.camera, pm.memory, pm.processor, pm.screen, pm.touchpanel,  pm.memorysocket, pm.processorsocket));
+               Tablets.add(pm.DeepCopy());
            }
            
            return Tablets;
@@ -60,7 +62,8 @@ public class Manufacturing {
            Laptops=new ArrayList<LaptopMotherboard>();
            for (int i = 0; i < piece; i++) {
                
-               Laptops.add(new LaptopMotherboard(pm.battery, pm.camera, pm.memory, pm.processor, pm.screen,  pm.memorysocket, pm.processorsocket));
+               //Laptops.add(new LaptopMotherboard(pm.battery, pm.camera, pm.memory, pm.processor, pm.screen,  pm.memorysocket, pm.processorsocket));
+               Laptops.add(pm.DeepCopy());
            }
            
            return Laptops;

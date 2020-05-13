@@ -5,6 +5,9 @@
  */
 package Commom;
 
+import Exceptions.NotvalidBatteryValue;
+import Exceptions.Notvalidvalue;
+
 /**
  *
  * @author O.Zsolt
@@ -12,8 +15,8 @@ package Commom;
 public  class Battery {
     
     public Battery(double mah,double volts,double h,double w,double l){
-    this.mah=mah;
-    this.volts=volts; this.height=h;this.width=w;this.length=l;
+        setMah(mah);
+        setVolts(volts); setHeight(h);setWidth(w);setLength(l);
     }
     private double mah;
     private double volts;
@@ -27,7 +30,8 @@ public  class Battery {
     }
     
     public void setMah(double mah) {
-        this.mah = mah;
+        if(mah<=0 ||mah>=30000) {throw new Notvalidvalue();}
+        else this.mah = mah;
     }
 
     public double getMah() {
@@ -35,7 +39,8 @@ public  class Battery {
     }
 
     public void setVolts(double volts) {
-        this.volts = volts;
+        if(3.75>volts ||volts>=30){ throw new NotvalidBatteryValue();}
+        else this.volts = volts;
     }
 
     public double getVolts() {
@@ -43,15 +48,18 @@ public  class Battery {
     }
 
     public void setHeight(double height) {
-        this.height = height;
+        if(0>= height) {throw new Notvalidvalue();}
+        else this.height = height;
     }
 
     public double getHeight() {
+         
         return height;
     }
 
     public void setLength(double length) {
-        this.length = length;
+         if(0>= length) {throw new Notvalidvalue();}
+         else this.length = length;
     }
 
     public double getLength() {
@@ -59,7 +67,8 @@ public  class Battery {
     }
 
     public void setWidth(double width) {
-        this.width = width;
+        if(0>= width) {throw new Notvalidvalue();}
+        else this.width = width;
     }
 
     public double getWidth() {
@@ -69,7 +78,7 @@ public  class Battery {
     
     
     public Battery DeepCopy(){
-        Battery clone=new Battery(this.getVolts(),getMah(),getHeight(),getWidth(),getLength());
+        Battery clone=new Battery(this.getMah(),getVolts(),getHeight(),getWidth(),getLength());
         clone.setVolts(getVolts());
         clone.setMah(getMah());
         clone.setHeight(getHeight());

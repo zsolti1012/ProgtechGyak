@@ -5,6 +5,8 @@
  */
 package Commom;
 
+import Exceptions.Notvalidvalue;
+
 /**
  *
  * @author O.Zsolt
@@ -12,8 +14,8 @@ package Commom;
 public class Screen {
     
     public Screen(double width,Resolution resolution){
-        this.width=width;
-        this.resolution=resolution;
+        setWidth(width);
+        setResolution(resolution);
     }
     
     public String getScreen(){
@@ -27,7 +29,8 @@ public class Screen {
     }
 
     public void setWidth(double width) {
-        this.width = width;
+        if(width<=0||width>=50) throw new Notvalidvalue();
+        else this.width = width;
     }
 
     public Resolution getResolution() {

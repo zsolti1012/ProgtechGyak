@@ -54,6 +54,7 @@ public final class PhoneMotherboard extends Motherboard{
     public Battery getBattery() {
         return battery;
     }
+    
 
     public Camera getCamera() {
         return camera;

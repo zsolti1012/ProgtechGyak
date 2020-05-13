@@ -6,6 +6,7 @@
 package Commom;
 
 //import java.net.Socket;
+import Exceptions.NotvalidMemory;
 import jdk.net.Sockets;
 
 /**
@@ -15,9 +16,9 @@ import jdk.net.Sockets;
 public class Memory {
     
     public Memory(double frequency,Socket socket,double sizemb){
-       this.frequency=frequency;
-       this.socket=socket;
-       this.sizemb=sizemb;
+        setFrequency(frequency);
+        setSocket(socket);
+        setSizemb(sizemb);
     }
     private double frequency;
     private Socket socket;
@@ -28,7 +29,8 @@ public class Memory {
     }
     
     public void setFrequency(double frequency) {
-        this.frequency = frequency;
+        if(0>=frequency ||frequency>=2000) throw new NotvalidMemory();
+        else this.frequency = frequency;
     }
 
     public double getFrequency() {
@@ -36,7 +38,8 @@ public class Memory {
     }
 
     public void setSizemb(double sizemb) {
-        this.sizemb = sizemb;
+        if(0>=sizemb ||sizemb>=50000) throw new NotvalidMemory();
+        else this.sizemb = sizemb;
     }
 
     public double getSizemb() {

@@ -78,15 +78,22 @@ public class LaptopMotherboard extends Motherboard{
        this.touchpad=Touchpad.getInstance();
        this.keyboard=Keyboard.getInstance();
        
-       if (this.memorysocket!=this.memory.getSocket()) {
-           throw new Notvalidmemorysocket();
-       }
-       if(this.processorsocket!=this.processor.getSocket()){
+        /*if(!MemoryCompatibility(this.memory)){
+            throw new Notvalidmemorysocket();
+        }
+       */
+       /*if(this.processorsocket!=this.processor.getSocket()){
            throw new Notvalidprocessorsocket();
        }
+      */
+       
+       
+   }
+   
+   public boolean MemoryCompatibility(Memory memory){
+       if (this.memorysocket!=this.memory.getSocket()) return false;
+       else return true;
       
-       
-       
    }
    
     public LaptopMotherboard DeepCopy() throws Exception{

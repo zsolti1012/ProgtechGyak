@@ -5,6 +5,8 @@
  */
 package Commom;
 
+import Exceptions.NotvalidCameraValue;
+
 /**
  *
  * @author O.Zsolt
@@ -12,7 +14,7 @@ package Commom;
 public class Camera {
     
     public Camera(double mp){
-    this.megapixels=mp;
+        setMegapixels(mp);
     };
     
     private double megapixels;
@@ -22,7 +24,8 @@ public class Camera {
     }
     
     public void setMegapixels(double megapixels) {
-        this.megapixels = megapixels;
+        if(0>=megapixels||megapixels>=100) throw new NotvalidCameraValue();
+        else this.megapixels = megapixels;
     }
 
     public double getMegapixels() {

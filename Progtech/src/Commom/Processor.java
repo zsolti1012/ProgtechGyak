@@ -5,6 +5,7 @@
  */
 package Commom;
 
+import Exceptions.NotvalidProcessor;
 import jdk.net.Sockets;
 
 /**
@@ -13,9 +14,9 @@ import jdk.net.Sockets;
  */
 public class Processor {
     public Processor(int seeds,double frequency,Socket socket){
-        this.seeds=seeds;
-        this.frequency=frequency;
-        this.socket=socket;
+        setSeeds(seeds);
+        setFrequency(frequency);
+        setSocket(socket);
     }
     
     
@@ -38,6 +39,8 @@ public class Processor {
            
 
     public void setSeeds(int seeds) {
+        if(seeds%2!=0) throw  new NotvalidProcessor();
+        if(0>=seeds ||seeds>=50) throw new NotvalidProcessor();
         this.seeds = seeds;
     }
 
@@ -46,6 +49,7 @@ public class Processor {
     }
 
     public void setFrequency(double frequency) {
+        if(0>=frequency||frequency>=60000) throw new NotvalidProcessor();
         this.frequency = frequency;
     }
 
