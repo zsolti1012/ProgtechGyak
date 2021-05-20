@@ -1,6 +1,5 @@
 Elképzelés: 
-A program azt szimulálja hogy egy telefonok, tabletek és laptopok összerelését végző cég,
-összeszerelő műhelyében vagyunk, és össze állíthatjuk ezeket az eszközököt.
+A program egy telefonok, tabletek és laptopok összerelését végző cég működését szimulálja.
 Azonban ügyelnünk kell rá, hogy a hasonló hardver elemeket ne keverjük össze, ugyanis 
 mind specifikus az adott eszközzel. Mint pl. telefonhoz is készül kijelző, azonban nem szerelhető be
 egy tabletbe.
